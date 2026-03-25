@@ -1,0 +1,128 @@
+[
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "apple",
+        "description": "apple",
+        "peekOfCode": "conn = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\"\n)",
+        "detail": "apple",
+        "documentation": {}
+    },
+    {
+        "label": "add_employee",
+        "kind": 2,
+        "importPath": "employee_management",
+        "description": "employee_management",
+        "peekOfCode": "def add_employee():\n    emp_id = int(input(\"Enter Employee ID: \"))\n    name = input(\"Enter Name: \")\n    dept = input(\"Enter Department: \")\n    salary = int(input(\"Enter Salary: \"))\n    city = input(\"Enter City: \")\n    query = \"INSERT INTO employees VALUES (%s,%s,%s,%s,%s)\"\n    values = (emp_id, name, dept, salary, city)\n    cursor.execute(query, values)\n    conn.commit()",
+        "detail": "employee_management",
+        "documentation": {}
+    },
+    {
+        "label": "view_employees",
+        "kind": 2,
+        "importPath": "employee_management",
+        "description": "employee_management",
+        "peekOfCode": "def view_employees():\n    cursor.execute(\"SELECT * FROM employees\")\n    records = cursor.fetchall()\n    print(\"\\nEmployee List\\n\")\n    for row in records:\n        print(row)\n# -----------------------------\n# UPDATE EMPLOYEE\n# -----------------------------\ndef update_employee():",
+        "detail": "employee_management",
+        "documentation": {}
+    },
+    {
+        "label": "update_employee",
+        "kind": 2,
+        "importPath": "employee_management",
+        "description": "employee_management",
+        "peekOfCode": "def update_employee():\n    emp_id = int(input(\"Enter Employee ID to update: \"))\n    salary = int(input(\"Enter New Salary: \"))\n    query = \"UPDATE employees SET salary=%s WHERE emp_id=%s\"\n    cursor.execute(query, (salary, emp_id))\n    conn.commit()\n    print(\"Employee Updated\")\n# -----------------------------\n# DELETE EMPLOYEE\n# -----------------------------",
+        "detail": "employee_management",
+        "documentation": {}
+    },
+    {
+        "label": "delete_employee",
+        "kind": 2,
+        "importPath": "employee_management",
+        "description": "employee_management",
+        "peekOfCode": "def delete_employee():\n    emp_id = int(input(\"Enter Employee ID to delete: \"))\n    query = \"DELETE FROM employees WHERE emp_id=%s\"\n    cursor.execute(query, (emp_id,))\n    conn.commit()\n    print(\"Employee Deleted\")\n# -----------------------------\n# MAIN MENU\n# -----------------------------\nwhile True:",
+        "detail": "employee_management",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "employee_management",
+        "description": "employee_management",
+        "peekOfCode": "conn = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\"\n)\ncursor = conn.cursor()\n# -----------------------------\n# CREATE DATABASE\n# -----------------------------\ncursor.execute(\"CREATE DATABASE IF NOT EXISTS employee_db\")",
+        "detail": "employee_management",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "employee_management",
+        "description": "employee_management",
+        "peekOfCode": "cursor = conn.cursor()\n# -----------------------------\n# CREATE DATABASE\n# -----------------------------\ncursor.execute(\"CREATE DATABASE IF NOT EXISTS employee_db\")\ncursor.execute(\"USE employee_db\")\n# -----------------------------\n# CREATE TABLE\n# -----------------------------\ncursor.execute(\"\"\"",
+        "detail": "employee_management",
+        "documentation": {}
+    },
+    {
+        "label": "add_student",
+        "kind": 2,
+        "importPath": "student_management",
+        "description": "student_management",
+        "peekOfCode": "def add_student():\n    student_id = int(input(\"Enter Student ID: \"))\n    name = input(\"Enter Name: \")\n    department = input(\"Enter Department: \")\n    fees = int(input(\"Enter Fees: \"))\n    city = input(\"Enter City: \")\n    query = \"INSERT INTO student VALUES (%s,%s,%s,%s,%s)\"\n    values = (student_id, name, department, fees, city)\n    cursor.execute(query, values)\n    conn.commit()",
+        "detail": "student_management",
+        "documentation": {}
+    },
+    {
+        "label": "view_student",
+        "kind": 2,
+        "importPath": "student_management",
+        "description": "student_management",
+        "peekOfCode": "def view_student():\n    cursor.execute(\"SELECT * FROM student\")\n    records = cursor.fetchall()\n    print(\"\\nStudent List\\n\")\n    for row in records:\n        print(row)\n# -----------------------------\n# UPDATE STUDENT\n# ----------------------------\ndef update_student():",
+        "detail": "student_management",
+        "documentation": {}
+    },
+    {
+        "label": "update_student",
+        "kind": 2,
+        "importPath": "student_management",
+        "description": "student_management",
+        "peekOfCode": "def update_student():\n    student_id = int(input(\"Enter student ID to update: \"))\n    fees = int(input(\"Enter new fees: \"))\n    query = \"UPDATE student SET fees=%s WHERE student_id=%s\"\n    cursor.execute(query, (fees, student_id))\n    conn.commit()\n    print(\"Student updated successfully\")\n# ----------------------------\n# DELETE STUDENT\n# ---------------------------",
+        "detail": "student_management",
+        "documentation": {}
+    },
+    {
+        "label": "delete_student",
+        "kind": 2,
+        "importPath": "student_management",
+        "description": "student_management",
+        "peekOfCode": "def delete_student():\n    student_id = int(input(\"Enter student ID to delete: \"))\n    query = \"DELETE FROM student WHERE student_id=%s\"\n    cursor.execute(query, (student_id,))\n    conn.commit()\n    print(\"Student deleted successfully\")\n# -------------------------\n# MAIN MENU\n# -------------------------\nwhile True:",
+        "detail": "student_management",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "student_management",
+        "description": "student_management",
+        "peekOfCode": "conn = mysql.connector.connect(\n    host=\"localhost\",\n    user=\"root\",\n    password=\"root\"\n)\ncursor = conn.cursor()\n# ----------------------------\n# CREATE DATABASE\n# ----------------------------\ncursor.execute(\"CREATE DATABASE IF NOT EXISTS student_db\")",
+        "detail": "student_management",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "student_management",
+        "description": "student_management",
+        "peekOfCode": "cursor = conn.cursor()\n# ----------------------------\n# CREATE DATABASE\n# ----------------------------\ncursor.execute(\"CREATE DATABASE IF NOT EXISTS student_db\")\ncursor.execute(\"USE student_db\")\n# --------------------------------\n# CREATE TABLE\n# --------------------------------\ncursor.execute(\"\"\"",
+        "detail": "student_management",
+        "documentation": {}
+    }
+]
